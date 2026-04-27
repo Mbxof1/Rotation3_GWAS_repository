@@ -1,0 +1,44 @@
+#!/bin/bash
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=75g
+#SBATCH --time=6:00:00
+#SBATCH --job-name=fastp
+#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/fastp/slurm-%x-%j.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=mbxas28@nottingham.ac.uk
+#SBATCH --array=0-114
+
+
+source $HOME/.bash_profile
+
+#activate conda environment
+conda activate rotation3
+
+#loading the samples into an array
+mapfile -t ROOTS < /share/BioinfMSc/life4136_2526/rotation3/group5/names.txt
+
+#does the job for each sample based on the sample name
+SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
+
+#input files
+FILE1=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_1.fastq.gz
+FILE2=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_2.fastq.gz
+
+#output directory
+OUTDIR=/share/BioinfMSc/life4136_2526/rotation3/group5/fastp
+mkdir -p "$OUTDIR"
+
+#running fastp
+fastp \
+  --in1 "$FILE1" \
+  --in2 "$FILE2" \
+  --out1 "$OUTDIR/${SAMPLE}_R1.trimmed.fq.gz" \
+  --out2 "$OUTDIR/${SAMPLE}_R2.trimmed.fq.gz" \
+  -l 50 \
+  -h "$OUTDIR/${SAMPLE}.html" \
+  &> "$OUTDIR/${SAMPLE}.log"
+
+conda deactivate
+
