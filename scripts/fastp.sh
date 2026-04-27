@@ -16,7 +16,7 @@ source $HOME/.bash_profile
 #activate conda environment
 conda activate rotation3
 
-#loading the samples into an array
+#loading the sample sinto an array
 mapfile -t ROOTS < /share/BioinfMSc/life4136_2526/rotation3/group5/names.txt
 
 #does the job for each sample based on the sample name

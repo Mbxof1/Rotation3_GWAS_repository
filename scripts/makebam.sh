@@ -26,7 +26,7 @@ module load bwa-uoneasy/0.7.17-GCCcore-12.3.0
 module load picard-uoneasy/3.0.0-Java-17
 
 #loading the samples into an array
-mapfile -t ROOTS < names.txt
+mapfile -t ROOTS < /share/BioinfMSc/life4136_2526/rotation3/group5/names.txt
 
 # Get the current sample name based on SLURM_ARRAY_TASK_ID
 SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
@@ -34,12 +34,12 @@ SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
 
 #Set file paths
 #Fastp trimmed reads
-FILE1=../Data_Folder/${SAMPLE}_1.fastq.gz
-FILE2=../Data_Folder/${SAMPLE}_2.fastq.gz
+FILE1=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_1.fastq.gz
+FILE2=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_2.fastq.gz
 
 
 # Reference genome
-REF=../Reference_genome/
+REF=/share/BioinfMSc/life4136_2526/rotation3/group5/dog_reference/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna
 
 
 # Outfile
