@@ -31,9 +31,3 @@ mkdir -p $OUT_DIR
 
 # filter: keep only biallelic SNPs
 bcftools view -m2 -M2 -v snps "$INPUT_VCF" -Oz -o "$OUTPUT_VCF"
-
-
-
-
-
-

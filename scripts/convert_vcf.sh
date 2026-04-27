@@ -18,8 +18,5 @@ source $HOME/.bash_profile
 #loading the plink module
 module load plink-uoneasy/2.00a3.7-foss-2023a
 
-#moving directories
-cd /share/BioinfMSc/life4136_2526/rotation3/group5/vcf/filtered
-
 #converting files from vcf
-plink --vcf dog.vcf.gz --double-id --allow-extra-chr --make-bed --out /share/BioinfMSc/life4136_2526/rotation3/group5/plink/dog_raw
+plink --vcf ../vcf/filtered/dog.vcf.gz --double-id --allow-extra-chr --make-bed --out ../plink/dog_raw

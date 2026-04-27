@@ -19,7 +19,7 @@ source $HOME/.bash_profile
 conda activate rotation3
 
 #indexing genome (needs to be done only once)
-bwa index /share/BioinfMSc/life4136_2526/rotation3/group5/dog_reference/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna
+bwa index ../reference_genome/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna
 
 #deactivating the conda environment
 conda deactivate

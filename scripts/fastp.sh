@@ -17,17 +17,17 @@ source $HOME/.bash_profile
 conda activate rotation3
 
 #loading the sample sinto an array
-mapfile -t ROOTS < /share/BioinfMSc/life4136_2526/rotation3/group5/names.txt
+mapfile -t ROOTS < names.txt
 
 #does the job for each sample based on the sample name
 SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
 
 #input files
-FILE1=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_1.fastq.gz
-FILE2=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_2.fastq.gz
+FILE1=../raw_data_folder/${SAMPLE}_1.fastq.gz
+FILE2=../raw_data_folder/${SAMPLE}_2.fastq.gz
 
 #output directory
-OUTDIR=/share/BioinfMSc/life4136_2526/rotation3/group5/fastp
+OUTDIR=../fastp
 mkdir -p "$OUTDIR"
 
 #running fastp
@@ -41,4 +41,3 @@ fastp \
   &> "$OUTDIR/${SAMPLE}.log"
 
 conda deactivate
-

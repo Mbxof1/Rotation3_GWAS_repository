@@ -19,7 +19,7 @@ source $HOME/.bash_profile
 module load plink-uoneasy/2.00a3.7-foss-2023a
 
 # set working directory
-SET_DIR=/share/BioinfMSc/life4136_2526/rotation3/group5
+SET_DIR=..
 
 # input and output directories
 PLINK_DIR=$SET_DIR/plink

@@ -18,12 +18,11 @@ source $HOME/.bash_profile
 #activate conda environment
 conda activate rotation3
 
-
 #Defining the input files for fastqc
-INPUT_FILES=/share/BioinfMSc/life4136_2526/rotation3/group5/fastp/*trimmed.fq.gz
+INPUT_FILES=../fastp/*trimmed.fq.gz
 
 #Defining output directory
-OUTDIR=/share/BioinfMSc/life4136_2526/rotation3/group5/fastp/fastqc
+OUTDIR=../fastp/fastqc
 
 #Making the output directory
 mkdir -p "$OUTDIR"

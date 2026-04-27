@@ -11,7 +11,7 @@
 #SBATCH --mail-type=end
 
 #pull all the file names from the raw data directory
-ls ../Data_Folder > file_names.txt
+ls ../raw_data_Folder > file_names.txt
 
 #remove all the contents of the string past the first _
 #increase the value of -f if the sample names contain an _ you want to retain
