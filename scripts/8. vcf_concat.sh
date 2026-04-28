@@ -8,20 +8,13 @@
 #SBATCH --mail-user=[YOUR-EMAIL]
 #SBATCH --mail-type=ALL
 
-#sourcing home bash profile
-source $HOME/.bash_profile
-
-#activating environment
-conda activate rotation3
-
 #load in bcftools
 module load bcftools-uoneasy/1.19-GCC-13.2.0
 
-#change to vcf directory, create a file containing the vcf names in the scripts directory, then return to the scripts directory
+#change to vcf directory and create a file containing the vcf names in the scripts directory
 cd ../vcf
 ls *.vcf > ../scripts/vcf_names.txt
-cd ../scripts
 
 # Concatenate all vcf files into a single vcf file
-bcftools concat --file-list vcf_names.txt -Oz --output ../vcf/compiled.vcf.gz
-bcftools index ../vcf/compiled.vcf.gz
+bcftools concat --file-list ../scripts/vcf_names.txt -Oz --output compiled.vcf.gz
+bcftools index compiled.vcf.gz

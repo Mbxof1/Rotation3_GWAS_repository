@@ -8,16 +8,13 @@
 #SBATCH --mail-user=[YOUR-EMAIL]
 #SBATCH --mail-type=ALL
 
-# load environment
-source $HOME/.bash_profile
-
 # load bcftools
 module load bcftools-uoneasy/1.18-GCC-13.2.0
 
 # defiing input/output paths
-INPUT_VCF=../vcf/dog.vcf.gz
+INPUT_VCF=../vcf/compiled.vcf.gz
 OUT_DIR=../vcf/filtered
-OUTPUT_VCF=../snps.vcf.gz
+OUTPUT_VCF=$OUT_DIR/snps.vcf.gz
 
 # creating output directory
 mkdir -p $OUT_DIR

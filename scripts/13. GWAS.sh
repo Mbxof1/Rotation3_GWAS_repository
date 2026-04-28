@@ -15,4 +15,4 @@ module load plink-uoneasy/2.00a3.7-foss-2023a
 mkdir ../GWAS
 
 #Run GWAS
-plink --bfile ../plink/qc/qc --allow-extra-chr --allow-no-sex --pheno ../phenotype_data/ind_pheno.txt --all-pheno --linear --out ../GWAS
+plink --bfile ../plink/qc/qc --allow-extra-chr --allow-no-sex --pheno ../phenotype_data/[PHENOTYPE_DATA] --all-pheno --linear --out ../GWAS/GWAS

@@ -12,4 +12,4 @@
 module load plink-uoneasy/2.00a3.7-foss-2023a
 
 #Run GWAS
-plink --bfile ../plink/qc/qc --allow-extra-chr --allow-no-sex --pheno ../phenotype_data/ind_pheno_weight.txt --covar ../plink/pca/pca20.eigenvec --covar-number 1-3 --linear --out ../phenotype_data/gwas_pca
+plink --bfile ../plink/qc/qc --allow-extra-chr --allow-no-sex --pheno ../phenotype_data/[PHENOTYPE_DATA] --covar ../plink/pca/pca20.eigenvec --covar-number 1-3 --linear --out ../GWAS/gwas_pca

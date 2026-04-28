@@ -6,9 +6,7 @@
 #SBATCH --mem=30g
 #SBATCH --time=10:00:00
 #SBATCH --mail-user=[YOUR-EMAIL]
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=fail
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 
 #pull all the file names from the raw data directory
 ls ../raw_data_Folder > file_names.txt

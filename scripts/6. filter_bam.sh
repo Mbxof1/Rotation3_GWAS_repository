@@ -9,17 +9,8 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=[YOUR-EMAIL]
 
-#sourcing home bash profile
-source $HOME/.bash_profile
-
-#activating environment
-conda activate rotation3
-
 # loading software
 module load samtools-uoneasy/1.18-GCC-12.3.0
-
-# making output directory
-mkdir -p ../logs/slurm
 
 # mapping sample names from names.txt
 mapfile -t SAMPLES < names.txt

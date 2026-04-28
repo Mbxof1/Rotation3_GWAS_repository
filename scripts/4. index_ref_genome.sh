@@ -9,8 +9,6 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=[YOUR-EMAIL]
 
-#script to index the reference assembly genome
-
 #sourcing bash profile to enable conda
 source $HOME/.bash_profile
 

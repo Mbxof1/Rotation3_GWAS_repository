@@ -11,11 +11,8 @@
 # load plink
 module load plink-uoneasy/2.00a3.7-foss-2023a
 
-# set directory
-SET_DIR=/share/BioinfMSc/life4136_2526/rotation3/group5
-
 # directories
-PLINK_DIR=$SET_DIR/plink
+PLINK_DIR=../plink
 PCA_DIR=$PLINK_DIR/pca
 
 # input dataset QC filtered
