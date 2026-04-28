@@ -5,26 +5,26 @@ For the purpose of this pipeline, scripts have been made generic whereever possi
 
 During our GWAS data analysis, we were able to produce VCF files from the provided fastq dataset, and did not have to rely on interpolation of the backup vcf file provided. Due to this, no script for interpolation is provided.
 
-All analysis except for graphing in R was performed using the University of Nottingham Ada HPC. Some tasks were performed using modules preinstalled on the HPC, whilst others utilised modules installed within a conda environment. A .yml file is provided to aid in the recreation of the conda environment, which should be named rotation3 to work with the provided scripts. Required modules are listed below:
+All analysis except for graphing in R was performed using the University of Nottingham Ada HPC. Some tasks were performed using modules preinstalled on the HPC, whilst others utilised modules installed within a conda environment. A .yml file is provided to aid in the recreation of the conda environment, which should be named rotation3 to work with the provided scripts. Required modules and github links are listed below:
 
 
 HPC preinstalled modules:
-samtools-uoneasy/1.18-GCC-12.3.0
-bwa-uoneasy/0.7.17-GCCcore-12.3.0
-picard-uoneasy/3.0.0-Java-17
-bcftools-uoneasy/1.19-GCC-13.2.0
-plink-uoneasy/2.00a3.7-foss-2023a
+samtools-uoneasy/1.18-GCC-12.3.0 - https://github.com/samtools/samtools
+bwa-uoneasy/0.7.17-GCCcore-12.3.0 - https://github.com/lh3/BWA
+picard-uoneasy/3.0.0-Java-17 - https://github.com/broadinstitute/picard
+bcftools-uoneasy/1.19-GCC-13.2.0 - https://github.com/samtools/bcftools
+plink-uoneasy/2.00a3.7-foss-2023a - https://github.com/chrchang/plink-ng
 
 
 Conda environment modules:
-fastp
-fastqc
-bwa
+fastp - https://github.com/opengene/fastp
+fastqc - https://github.com/s-andrews/fastqc
+bwa - https://github.com/lh3/BWA
 
 
 R packages:
-qqman
-dplyr
+qqman - https://github.com/stephenturner/qqman
+dplyr - https://github.com/tidyverse/dplyr
 
 
 In order to perform a GWAS analysis, the following data will be required:
