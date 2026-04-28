@@ -29,8 +29,7 @@ cd ../bam
 OUT=../vcf/${SAMPLE}.vcf
 
 # Run mpileup and call variants for the current sample
-bcftools mpileup --threads 39 -Ou -f ../reference_genome/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna --platforms ILLUMINA --annotate FORMAT/DP,FORMAT/AD --bam-list "$BAMLIST" -r "${SAMPLE}" | bcftools call --threads 39 -mv -a GQ,GP -Oz -o "$OUT"
+bcftools mpileup --threads 39 -Ou -f ../reference_genome/[REFERENCE_FILE_NAME] --platforms ILLUMINA --annotate FORMAT/DP,FORMAT/AD --bam-list "$BAMLIST" -r "${SAMPLE}" | bcftools call --threads 39 -mv -a GQ,GP -Oz -o "$OUT"
 
 # Convert BCF to VCF format and index the VCF file
 bcftools index $OUT
-

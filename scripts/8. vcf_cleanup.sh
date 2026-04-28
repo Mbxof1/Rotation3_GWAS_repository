@@ -18,13 +18,10 @@ source $HOME/.bash_profile
 # load bcftools
 module load bcftools-uoneasy/1.18-GCC-13.2.0
 
-# base dir
-BASE_DIR=/share/BioinfMSc/life4136_2526/rotation3/group5
-
 # defiing input/output paths
-INPUT_VCF=$BASE_DIR/vcf/dog.vcf.gz
-OUT_DIR=$BASE_DIR/vcf/filtered
-OUTPUT_VCF=$OUT_DIR/dog_snps.vcf.gz
+INPUT_VCF=../vcf/dog.vcf.gz
+OUT_DIR=../vcf/filtered
+OUTPUT_VCF=../snps.vcf.gz
 
 # creating output directory
 mkdir -p $OUT_DIR

@@ -21,7 +21,7 @@ conda activate rotation3
 module load samtools-uoneasy/1.18-GCC-12.3.0
 
 # making output directory
-mkdir -p logs/slurm
+mkdir -p ../logs/slurm
 
 # mapping sample names from names.txt
 mapfile -t SAMPLES < names.txt

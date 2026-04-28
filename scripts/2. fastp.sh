@@ -10,7 +10,7 @@
 #SBATCH --mail-user=mbxas28@nottingham.ac.uk
 #SBATCH --array=0-114
 
-
+#source bash profile to allow conda env activation
 source $HOME/.bash_profile
 
 #activate conda environment

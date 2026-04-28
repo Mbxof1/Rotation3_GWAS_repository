@@ -18,11 +18,8 @@ source $HOME/.bash_profile
 # load plink
 module load plink-uoneasy/1.9b_6.21-x86_64
 
-# set dir
-SET_DIR=/share/BioinfMSc/life4136_2526/rotation3/group5
-
 # input/output directories
-PLINK_DIR=$SET_DIR/plink
+PLINK_DIR=../plink
 OUT_DIR=$PLINK_DIR/qc
 
 # create output directory

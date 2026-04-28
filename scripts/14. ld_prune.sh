@@ -18,11 +18,8 @@ source $HOME/.bash_profile
 # load plimk
 module load plink-uoneasy/2.00a3.7-foss-2023a
 
-# set working directory
-SET_DIR=..
-
 # input and output directories
-PLINK_DIR=$SET_DIR/plink
+PLINK_DIR=../plink
 OUT_DIR=$PLINK_DIR/pca
 
 # create PCA directory
@@ -35,5 +32,4 @@ INPUT_DATA=$PLINK_DIR/qc/dog_qc
 OUTPUT_DATA=$OUT_DIR/prune
 
 # LD pruning
-plink --bfile "$INPUT_DATA" --allow-extra-chr --indep-pairwise 50 5 0.2 --out prune
-
+plink --bfile "$INPUT_DATA" --allow-extra-chr --indep-pairwise 50 5 0.2 --out "$OUTPUT_DATA"
