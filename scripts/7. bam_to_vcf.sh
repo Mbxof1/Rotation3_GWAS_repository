@@ -14,17 +14,19 @@ module load bcftools-uoneasy/1.19-GCC-13.2.0
 module load samtools-uoneasy/1.22.1-GCC-14.2.0
 
 #load chromosomes into an array
-mapfile -t ROOTS < chr_names.txt
+mapfile -t ROOTS < [CHR_NAMES_FOLDER]
 SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
 
 #pulls all files from the bam directory and echoes them for the script
-BAMLIST=$(ls ../bam/*.bam | tr '\n' ' ')
+cd ../bam
+ls *.filtered.bam > ../scripts/bam_names.txt
+cd ../scripts
 
 #VCF output
 OUT=../vcf/${SAMPLE}.vcf
 
 # Run mpileup and call variants for the current sample
-bcftools mpileup --threads 39 -Ou -f ../reference_genome/[REFERENCE_FILE_NAME] --platforms ILLUMINA --annotate FORMAT/DP,FORMAT/AD --bam-list "$BAMLIST" -r "${SAMPLE}" | bcftools call --threads 39 -mv -a GQ,GP -Oz -o "$OUT"
+bcftools mpileup --threads 39 -Ou -f ../reference_genome/[REFERENCE_FILE_NAME] --platforms ILLUMINA --annotate FORMAT/DP,FORMAT/AD --bam-list bam_names.txt -r "${SAMPLE}" | bcftools call --threads 39 -mv -a GQ,GP -Oz -o "$OUT"
 
 # Convert BCF to VCF format and index the VCF file
 bcftools index $OUT

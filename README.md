@@ -34,7 +34,7 @@ A reference genome, in fasta file format.
 
 1. Place fastq.gz files into the raw_data_folder. 
 
-2. place the reference genome into the reference_genome folder alter the index_ref_genome, makebam and bam_to_vcf files, replacing each instance of [REFERENCE_FILE_NAME] with the file name of the reference genome.
+2. place the reference genome into the reference_genome folder alter the index_ref_genome, makebam and bam_to_vcf files, replacing each instance of [REFERENCE_FILE_NAME] with the file name of the reference genome. A list of chromosome names should also be added into the scripts folder, with its name added to the bam_to_vcf file in place of [CHR_NAMES_FOLDER]. An example is provided in the scripts folder.
 
 3. run sample_names.sh, making modifications to the script if the sample name contains _ characters that must not be trimmed. An example of the output names.txt file is provided
 
