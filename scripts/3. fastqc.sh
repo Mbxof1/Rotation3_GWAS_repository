@@ -6,10 +6,8 @@
 #SBATCH --mem=50g
 #SBATCH --time=10:00:00
 #SBATCH --job-name=fastqc
-#SBATCH --error=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.err
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.out
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mbxas28@exmail.nottingham.ac.uk
+#SBATCH --mail-user=[YOUR-EMAIL]
 
 #source bash profile to enable conda
 source $HOME/.bash_profile

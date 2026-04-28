@@ -5,35 +5,24 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=100g
 #SBATCH --time=02:00:00
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.out
-#SBATCH --error=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.err
-#SBATCH --mail-user=lpxis2@nottingham.ac.uk
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
-#SBATCH --mail-type=fail
-
-# load environment
-source $HOME/.bash_profile
+#SBATCH --mail-user=[YOUR-EMAIL]
+#SBATCH --mail-type=ALL
 
 # load plink
 module load plink-uoneasy/1.9b_6.21-x86_64
 
-# set dir
-SET_DIR=/share/BioinfMSc/life4136_2526/rotation3/group5
-
 # input/output directories
-PLINK_DIR=$SET_DIR/plink
+PLINK_DIR=../plink
 OUT_DIR=$PLINK_DIR/qc
 
 #creatinf output directory
 mkdir -p "$OUT_DIR"
 
 # input plink binary dataset 
-INPUT_BINARY=$PLINK_DIR/dog_raw
+INPUT_BINARY=$PLINK_DIR/raw
 
 #output for missingness results
-OUTPUT_MISSING=$OUT_DIR/dog_missing
+OUTPUT_MISSING=$OUT_DIR/missingness
 
 # run missingness check
 plink --bfile "$INPUT_BINARY" --missing --allow-extra-chr --out "$OUTPUT_MISSING"
-

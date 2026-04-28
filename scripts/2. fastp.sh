@@ -5,9 +5,8 @@
 #SBATCH --mem=75g
 #SBATCH --time=6:00:00
 #SBATCH --job-name=fastp
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/fastp/slurm-%x-%j.out
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mbxas28@nottingham.ac.uk
+#SBATCH --mail-user=[YOUR-EMAIL]
 #SBATCH --array=0-114
 
 #source bash profile to allow conda env activation

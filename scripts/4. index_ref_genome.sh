@@ -6,9 +6,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16g
 #SBATCH --time=2:00:00
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group1/CJ/results/logs/slurm/slurm-%x-%j.out
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mbxas28@nottingham.ac.uk
+#SBATCH --mail-user=[YOUR-EMAIL]
 
 #script to index the reference assembly genome
 

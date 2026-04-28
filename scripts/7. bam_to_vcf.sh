@@ -6,24 +6,19 @@
 #SBATCH --mem=30g
 #SBATCH --time=72:00:00
 #SBATCH --array=0-38
-#SBATCH --output=logs/slurm/slurm-%x-%A.out
-#SBATCH --error=logs/slurm/slurm-%x-%A.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mbxof1@nottingham.ac.uk
+#SBATCH --mail-user=[YOUR-EMAIL]
 
 #Load in modules
 module load bcftools-uoneasy/1.19-GCC-13.2.0
 module load samtools-uoneasy/1.22.1-GCC-14.2.0
 
 #load chromosomes into an array
-mapfile -t ROOTS < ../chr.names.txt
+mapfile -t ROOTS < chr_names.txt
 SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
 
-#text file listing bam files
-BAMLIST=../bam_names.txt
-
-#change directory
-cd ../bam
+#pulls all files from the bam directory and echoes them for the script
+BAMLIST=$(ls ../bam/*.bam | tr '\n' ' ')
 
 #VCF output
 OUT=../vcf/${SAMPLE}.vcf

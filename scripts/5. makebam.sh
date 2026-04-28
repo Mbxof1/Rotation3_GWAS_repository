@@ -5,12 +5,8 @@
 #SBATCH --ntasks-per-node=8
 #SBATCH --mem=30g
 #SBATCH --time=10:00:00
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.out
-#SBATCH --error=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.err
-#SBATCH --mail-user=mbxof1@nottingham.ac.uk
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=fail
-#SBATCH --mail-type=end
+#SBATCH --mail-user=[YOUR-EMAIL]
+#SBATCH --mail-type=ALL
 #SBATCH --array=0-114
 
 

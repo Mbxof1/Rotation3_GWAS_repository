@@ -5,12 +5,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=100g
 #SBATCH --time=02:00:00
-#SBATCH --output=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.out
-#SBATCH --error=/share/BioinfMSc/life4136_2526/rotation3/group5/scripts/logs/slurm/slurm-%x-%j.err
-#SBATCH --mail-user=lpxis2@nottingham.ac.uk
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
-#SBATCH --mail-type=fail
+#SBATCH --mail-user=[YOUR-EMAIL]
+#SBATCH --mail-type=ALL
 
 # load environment
 source $HOME/.bash_profile
