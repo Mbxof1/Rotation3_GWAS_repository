@@ -23,9 +23,6 @@ module load samtools-uoneasy/1.18-GCC-12.3.0
 # making output directory
 mkdir -p logs/slurm
 
-#move up a directory
-cd ..
-
 # mapping sample names from names.txt
 mapfile -t SAMPLES < names.txt
 SAMPLE=${SAMPLES[$SLURM_ARRAY_TASK_ID]}
@@ -33,6 +30,6 @@ SAMPLE=${SAMPLES[$SLURM_ARRAY_TASK_ID]}
 # filter the BAM file
 # -q 20 (for now, said to be used where some ambiguity is acceptable)
 # -F 2308: removes unmapped secondary, and supplementary reads
-samtools view -@ 8 -b -q 10 -F 2308 bam/${SAMPLE}.rmd.bam > bam/${SAMPLE}.90%con.filtered.bam
+samtools view -@ 8 -b -q 10 -F 2308 ../bam/${SAMPLE}.rmd.bam > ../bam/${SAMPLE}.90%con.filtered.bam
 # index the new filtered BAM file
-samtools index bam/${SAMPLE}.90%con.filtered.bam
+samtools index ../bam/${SAMPLE}.90%con.filtered.bam

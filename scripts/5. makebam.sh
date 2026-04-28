@@ -26,7 +26,7 @@ module load bwa-uoneasy/0.7.17-GCCcore-12.3.0
 module load picard-uoneasy/3.0.0-Java-17
 
 #loading the samples into an array
-mapfile -t ROOTS < /share/BioinfMSc/life4136_2526/rotation3/group5/names.txt
+mapfile -t ROOTS < names.txt
 
 # Get the current sample name based on SLURM_ARRAY_TASK_ID
 SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
@@ -34,18 +34,16 @@ SAMPLE=${ROOTS[$SLURM_ARRAY_TASK_ID]}
 
 #Set file paths
 #Fastp trimmed reads
-FILE1=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_1.fastq.gz
-FILE2=/share/BioinfMSc/Hannah_resources/doggies/fastqs/${SAMPLE}_2.fastq.gz
+FILE1=../fastp/${SAMPLE}_R1.trimmed.fastq.gz
+FILE2=../fastp/${SAMPLE}_R2.trimmed.fastq.gz
 
 
 # Reference genome
-REF=/share/BioinfMSc/life4136_2526/rotation3/group5/dog_reference/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna
-
+REF=../reference_genome/[REFERENCE_FILE_NAME]
 
 # Outfile
-cd /share/BioinfMSc/life4136_2526/rotation3/group5/
-mkdir -p bam
-OUTFILE=bam/${SAMPLE}.sort.bam
+mkdir ../bam
+OUTFILE=../bam/${SAMPLE}.sort.bam
 
 #aligning reads
         echo "Aligning ${SAMPLE} with bwa"
@@ -64,7 +62,7 @@ MarkDuplicates REMOVE_DUPLICATES=true \
 ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT \
 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=1000 \
 INPUT="$OUTFILE" \
-OUTPUT=bam/${SAMPLE}.rmd.bam \
-METRICS_FILE=bam/${SAMPLE}.rmd.bam.metrics
-samtools index bam/${SAMPLE}.rmd.bam
+OUTPUT=../bam/${SAMPLE}.rmd.bam \
+METRICS_FILE=../bam/${SAMPLE}.rmd.bam.metrics
+samtools index ../bam/${SAMPLE}.rmd.bam
 rm $OUTFILE

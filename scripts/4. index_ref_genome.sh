@@ -10,7 +10,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=mbxas28@nottingham.ac.uk
 
-#script to index the dog reference assembly genome
+#script to index the reference assembly genome
 
 #sourcing bash profile to enable conda
 source $HOME/.bash_profile
@@ -19,7 +19,7 @@ source $HOME/.bash_profile
 conda activate rotation3
 
 #indexing genome (needs to be done only once)
-bwa index ../reference_genome/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna
+bwa index ../reference_genome/[REFERENCE_FILE_NAME]
 
 #deactivating the conda environment
 conda deactivate
