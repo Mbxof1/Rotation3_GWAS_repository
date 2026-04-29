@@ -46,7 +46,7 @@ gwas_weight <- gwas_weight_pca[gwas_weight_pca$TEST == "COV1",]
   gwas_weight[gwas_weight == "NC_049260.1"] <- as.numeric(39)
 }
 
-# Converts chromosome collumn to numeric value
+# Converts chromosome column to numeric value
 gwas_manhattan <- gwas_weight %>% mutate_at(c('CHR'), as.numeric)
 
 # Removes NA values
