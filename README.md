@@ -38,8 +38,11 @@ dplyr - https://github.com/tidyverse/dplyr
 
 
 In order to perform a GWAS analysis, the following data will be required:
+
 Phenotype data associated with the samples. This should be orginised in a .txt file, with spaces separating 3 columns. The columns should contain sample group data, the sample name and data for the trait being investigated. This file should be placed in the phenotype data folder.
+
 Biological data for the samples, in the form of fastq.gz files. 
+
 A reference genome, in fasta file format.
 
 
