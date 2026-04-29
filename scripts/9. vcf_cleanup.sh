@@ -11,7 +11,7 @@
 # load bcftools
 module load bcftools-uoneasy/1.18-GCC-13.2.0
 
-# defiing input/output paths
+# defining input/output paths
 INPUT_VCF=../vcf/compiled.vcf.gz
 OUT_DIR=../vcf/filtered
 OUTPUT_VCF=$OUT_DIR/snps.vcf.gz

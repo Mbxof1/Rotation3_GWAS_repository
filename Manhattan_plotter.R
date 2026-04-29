@@ -46,10 +46,13 @@ gwas_weight <- gwas_weight_pca[gwas_weight_pca$TEST == "COV1",]
   gwas_weight[gwas_weight == "NC_049260.1"] <- as.numeric(39)
 }
 
+# Converts chromosome collumn to numeric value
 gwas_manhattan <- gwas_weight %>% mutate_at(c('CHR'), as.numeric)
 
+# Removes NA values
 gwas_filtered <- na.omit(gwas_manhattan)
 
+# Generates manhattan plot
 manhattan_plot <- manhattan(gwas_filtered, chr = 'CHR', bp = "BP", snp = "SNP", p = "P")
 
 View(manhattan_plot)
