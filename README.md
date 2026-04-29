@@ -9,21 +9,31 @@ All analysis except for graphing in R was performed using the University of Nott
 
 
 HPC preinstalled modules:
+
 samtools-uoneasy/1.18-GCC-12.3.0 - https://github.com/samtools/samtools
+
 bwa-uoneasy/0.7.17-GCCcore-12.3.0 - https://github.com/lh3/BWA
+
 picard-uoneasy/3.0.0-Java-17 - https://github.com/broadinstitute/picard
+
 bcftools-uoneasy/1.19-GCC-13.2.0 - https://github.com/samtools/bcftools
+
 plink-uoneasy/2.00a3.7-foss-2023a - https://github.com/chrchang/plink-ng
 
 
 Conda environment modules:
+
 fastp - https://github.com/opengene/fastp
+
 fastqc - https://github.com/s-andrews/fastqc
+
 bwa - https://github.com/lh3/BWA
 
 
 R packages:
+
 qqman - https://github.com/stephenturner/qqman
+
 dplyr - https://github.com/tidyverse/dplyr
 
 
