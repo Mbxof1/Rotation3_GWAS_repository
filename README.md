@@ -61,6 +61,6 @@ A reference genome, in fasta file format.
 
 14. run GWAS-PCA.sh to generate higher quality GWAS output. Replace [PHENOTYPE_DATA] with the name of your phenotype data .txt file.
 
-15. move generated data to local system, then use Manhattan_plotter.R to generate a manhattan plot of the data. Manhattan plot generation requires that chromosomes be named in a 1,2,3 format. An example of how to exchange chromosome names can be found in the Manhattan_plotter.R script. Replace the [GWAS.assoc.linear FILE PATH] placeholder with the path to your local GWAS.assoc.linear download.
+15. move generated assoc.linear data to local system, then use Manhattan_plotter.R to generate a manhattan plot of the data. Manhattan plot generation requires that chromosomes be named in a 1,2,3 format. An example of how to exchange chromosome names can be found in the Manhattan_plotter.R script. Replace the [GWAS.assoc.linear FILE PATH] placeholder with the path to your local GWAS.assoc.linear download.
 
 If you wish to recieve updates from the sbatch run, replace the [YOUR-EMAIL] placeholder in the .sh file header with your email address.
